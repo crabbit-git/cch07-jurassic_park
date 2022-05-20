@@ -21,7 +21,9 @@ describe('Park', function() {
     );
   });
 
-  it('should have a name');
+  it('should have a name', function() {
+    assert.strictEqual(park.name, 'Jurassic Park')
+  });
 
   it('should have a ticket price');
 
