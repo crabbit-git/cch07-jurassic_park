@@ -47,6 +47,16 @@ Park.prototype.filterBySpecies = function(species) {
     return filteredDinos;
 };
 
+Park.prototype.removeBySpecies = function(species) {
+    let filteredDinos = [];
+    for (let dinosaur of this.dinosaurs) {
+        if (dinosaur.species !== species) {
+            filteredDinos.push(dinosaur);
+        };
+    };
+    this.dinosaurs = filteredDinos;
+};
+
 Park.prototype.estimateDailyVisitors = function() {
     let averageDailyVisitors = 0;
     for (let dinosaur of this.dinosaurs) {
