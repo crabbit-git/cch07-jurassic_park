@@ -60,10 +60,16 @@ describe('Park', function() {
     assert.deepStrictEqual(park.filterBySpecies('Velociraptor'), raptors);
   });
 
-  it('should be able to calculate the total number of visitors per day');
+  it('should be able to calculate the total number of visitors per day', function() {
+    assert.strictEqual(park.estimateDailyVisitors(), 175);
+  });
 
-  it('should be able to calculate the total number of visitors per year');
+  it('should be able to calculate the total number of visitors per year', function() {
+    assert.strictEqual(park.estimateAnnualVisitors(), 63000);
+  });
 
-  it('should be able to calculate total revenue for one year');
+  it('should be able to calculate total revenue for one year', function() {
+    assert.strictEqual(park.estimateAnnualTicketRevenue(), 12600000);
+  });
 
 });

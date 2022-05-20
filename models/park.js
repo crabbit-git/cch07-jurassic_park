@@ -47,4 +47,21 @@ Park.prototype.filterBySpecies = function(species) {
     return filteredDinos;
 };
 
+Park.prototype.estimateDailyVisitors = function() {
+    let averageDailyVisitors = 0;
+    for (let dinosaur of this.dinosaurs) {
+        averageDailyVisitors += dinosaur.guestsAttractedPerDay;
+    };
+    return averageDailyVisitors;
+};
+
+Park.prototype.estimateAnnualVisitors = function() {
+    let daysOpenAnnually = 360;
+    return (this.estimateDailyVisitors() * daysOpenAnnually);
+};
+
+Park.prototype.estimateAnnualTicketRevenue = function() {
+    return (this.estimateAnnualVisitors() * this.ticketPrice);
+};
+
 module.exports = Park;
