@@ -13,7 +13,9 @@ describe('Park', function() {
     dino4 = new Dinosaur('Gallimimus', 'omnivore', 15);
     dino5 = new Dinosaur('Tyrannosaurus Rex', 'carnivore', 50);
     dino6 = new Dinosaur('Dilophosaurus', 'carnivore', 40);
-    dino7 = new Dinosaur('Velociraptor', 'carnivore', 35);
+    dino7 = new Dinosaur('Velociraptor', 'carnivore', 30);
+    dino8 = new Dinosaur('Velociraptor', 'carnivore', 35);
+    dino9 = new Dinosaur('Velociraptor', 'carnivore', 25);
     park = new Park(
       'Jurassic Park',
       200,
@@ -50,7 +52,13 @@ describe('Park', function() {
     assert.strictEqual(park.identifyBlockbuster(), dino5);
   });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function() {
+    park.addDinosaur(dino7);
+    park.addDinosaur(dino8);
+    park.addDinosaur(dino9);
+    raptors = [dino7, dino8, dino9];
+    assert.deepStrictEqual(park.filterBySpecies('Velociraptor'), raptors);
+  });
 
   it('should be able to calculate the total number of visitors per day');
 

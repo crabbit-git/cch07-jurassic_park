@@ -37,4 +37,14 @@ Park.prototype.identifyBlockbuster = function() {
     // return blockbuster;
 };
 
+Park.prototype.filterBySpecies = function(species) {
+    let filteredDinos = [];
+    for (let dinosaur of this.dinosaurs) {
+        if (dinosaur.species === species) {
+            filteredDinos.push(dinosaur);
+        };
+    };
+    return filteredDinos;
+};
+
 module.exports = Park;
