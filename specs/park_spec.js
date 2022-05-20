@@ -78,4 +78,13 @@ describe('Park', function() {
     assert.deepStrictEqual(park.dinosaurs, dinosaurs);
   });
 
+  it('should be able to ascertain how many dinosaurs of each dietary type are in the collection', function() {
+    let dietAnalysis = {
+      'carnivore': 2,
+      'herbivore': 3,
+      'omnivore': 1
+    };
+    assert.deepStrictEqual(park.analyseDiets(), dietAnalysis)
+  });
+
 });

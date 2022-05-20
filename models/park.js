@@ -74,4 +74,26 @@ Park.prototype.estimateAnnualTicketRevenue = function() {
     return (this.estimateAnnualVisitors() * this.ticketPrice);
 };
 
+Park.prototype.analyseDiets = function() {
+    let countCarnivores = 0;
+    let countHerbivores = 0;
+    let countOmnivores = 0;
+    for (let dinosaur of this.dinosaurs) {
+        if (dinosaur.diet === 'carnivore') {
+            countCarnivores++;
+        };
+        if (dinosaur.diet === 'herbivore') {
+            countHerbivores++;
+        };
+        if (dinosaur.diet === 'omnivore') {
+            countOmnivores++;
+        };
+    };
+    return {
+        'carnivore': countCarnivores,
+        'herbivore': countHerbivores,
+        'omnivore': countOmnivores
+    };
+};
+
 module.exports = Park;
