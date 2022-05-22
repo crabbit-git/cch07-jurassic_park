@@ -17,9 +17,9 @@ describe('Park', function() {
         dino8 = new Dinosaur('Velociraptor', 'carnivore', 35);
         dino9 = new Dinosaur('Velociraptor', 'carnivore', 25);
         park = new Park(
-        'Jurassic Park',
-        200,
-        [dino1, dino2, dino3, dino4, dino5, dino6]
+            'Jurassic Park',
+            200,
+            [dino1, dino2, dino3, dino4, dino5, dino6]
         );
     });
   
