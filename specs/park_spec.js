@@ -48,43 +48,64 @@ describe('Park', function() {
         assert.deepStrictEqual(park.dinosaurs, dinosaurs);
     });
   
-    it('should be able to find the dinosaur that attracts the most visitors', function() {
-        assert.strictEqual(park.identifyBlockbuster(), dino5);
-    });
+    it(
+        'should be able to find the dinosaur that attracts the most visitors',
+        function() {
+            assert.strictEqual(park.identifyBlockbuster(), dino5);
+        }
+    );
   
-    it('should be able to find all dinosaurs of a particular species', function() {
-        park.addDinosaur(dino7);
-        park.addDinosaur(dino8);
-        park.addDinosaur(dino9);
-        raptors = [dino7, dino8, dino9];
-        assert.deepStrictEqual(park.filterBySpecies('Velociraptor'), raptors);
-    });
+    it(
+        'should be able to find all dinosaurs of a particular species',
+        function() {
+            park.addDinosaur(dino7);
+            park.addDinosaur(dino8);
+            park.addDinosaur(dino9);
+            raptors = [dino7, dino8, dino9];
+            assert.deepStrictEqual(
+                park.filterBySpecies('Velociraptor'), raptors
+            );
+        }
+    );
   
-    it('should be able to calculate the total number of visitors per day', function() {
-        assert.strictEqual(park.estimateDailyVisitors(), 175);
-    });
+    it(
+        'should be able to calculate the total number of visitors per day',
+        function() {
+            assert.strictEqual(park.estimateDailyVisitors(), 175);
+        }
+    );
   
-    it('should be able to calculate the total number of visitors per year', function() {
-        assert.strictEqual(park.estimateAnnualVisitors(), 63000);
-    });
+    it(
+        'should be able to calculate the total number of visitors per year',
+        function() {
+            assert.strictEqual(park.estimateAnnualVisitors(), 63000);
+        }
+    );
   
     it('should be able to calculate total revenue for one year', function() {
         assert.strictEqual(park.estimateAnnualTicketRevenue(), 12600000);
     });
   
-    it('should be able to remove all dinosaurs of a particular species', function() {
-        park.removeBySpecies('Parasaurolophus');
-        let dinosaurs = [dino1, dino3, dino4, dino5, dino6];
-        assert.deepStrictEqual(park.dinosaurs, dinosaurs);
-    });
+    it(
+        'should be able to remove all dinosaurs of a particular species',
+        function() {
+            park.removeBySpecies('Parasaurolophus');
+            let dinosaurs = [dino1, dino3, dino4, dino5, dino6];
+            assert.deepStrictEqual(park.dinosaurs, dinosaurs);
+        }
+    );
   
-    it('should be able to ascertain how many dinosaurs of each dietary type are in the collection', function() {
-        let dietAnalysis = {
-            'carnivore': 2,
-            'herbivore': 3,
-            'omnivore': 1
-        };
-        assert.deepStrictEqual(park.analyseDiets(), dietAnalysis);
-    });
+    it(
+        `should be able to ascertain how many dinosaurs of each dietary type are
+        in the collection`,
+        function() {
+            let dietAnalysis = {
+                'carnivore': 2,
+                'herbivore': 3,
+                'omnivore': 1
+            };
+            assert.deepStrictEqual(park.analyseDiets(), dietAnalysis);
+        }
+    );
 
 });

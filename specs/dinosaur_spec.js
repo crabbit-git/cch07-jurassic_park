@@ -19,9 +19,12 @@ describe('Dinosaur', function() {
         assert.strictEqual(actual, 'carnivore');
     });
     
-    it('should have an average number of visitors it attracts per day', function () {
-        const actual = dinosaur.guestsAttractedPerDay;
-        assert.strictEqual(actual, 50);
-    });
+    it(
+        'should have an average number of visitors it attracts per day',
+        function () {
+            const actual = dinosaur.guestsAttractedPerDay;
+            assert.strictEqual(actual, 50);
+        }
+    );
 
 });
